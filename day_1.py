@@ -1,6 +1,8 @@
-from utils.inputManager import getInputData
+from utils.dataManager import dataManager
 
-data=getInputData("https://adventofcode.com/2022/day/1/input")
+dm = dataManager()
+data=dm.readFile("https://adventofcode.com/2022/day/1/input")
+
 elflist=list()
 for elf in data.strip().split('\n\n'):
     elflist.append(sum([int(food) for food in elf.split('\n')]))
